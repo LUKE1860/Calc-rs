@@ -48,9 +48,30 @@ fn fourth(){
     let add=x1/x2;
     println!("Equals {}",add);
     }
+fn sine(){
+    let mut input1=String::new();
+    println!("Enter a first number");
+    io::stdin().read_line(&mut input1).expect("Wrong format");
+    let x1:f64=input1.trim().parse().expect("Wrong format");
+    println!("Sine of {}equals {}",input1,x1.sin())
+}
+fn cosine(){
+    let mut input1=String::new();
+    println!("Enter a first number");
+    io::stdin().read_line(&mut input1).expect("Wrong format");
+    let x1:f64=input1.trim().parse().expect("Wrong format");
+    println!("Sine of {}equals {}",input1,x1.cos())
+}
+fn tangent(){
+    let mut input1=String::new();
+    println!("Enter a first number");
+    io::stdin().read_line(&mut input1).expect("Wrong format");
+    let x1:f64=input1.trim().parse().expect("Wrong format");
+    println!("Sine of {}equals {}",input1,x1.tan())
+}
 fn main() {
 let mut a=String::new();
-println!("Enter a format:+,-,*,/");
+println!("Enter a format:+,-,*,/,s,c,t");
 io::stdin().read_line(&mut a).expect("Wrong format");
 if a.contains("+"){
 first();    
@@ -63,6 +84,15 @@ third();
 }
 else if a.contains("/"){
 fourth();
+}
+else if a.contains("s"){
+sine();    
+}
+else if a.contains("c"){
+cosine();
+}
+else if a.contains("t"){
+tangent();
 }
 else {
 println!("Try again")
