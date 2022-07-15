@@ -73,28 +73,14 @@ fn main() {
 let mut a=String::new();
 println!("Enter a format:+,-,*,/,s,c,t");
 io::stdin().read_line(&mut a).expect("Wrong format");
-if a.contains("+"){
-first();    
-}
-else if a.contains("-"){
-second();
-}
-else if a.contains("*"){
-third();
-}
-else if a.contains("/"){
-fourth();
-}
-else if a.contains("s"){
-sine();    
-}
-else if a.contains("c"){
-cosine();
-}
-else if a.contains("t"){
-tangent();
-}
-else {
-println!("Try again")
-}
+match a.trim().as_ref(){
+    "+"=>first(),
+    "-"=>second(),
+    "*"=>third(),
+    "/"=>fourth(),
+    "s"=>sine(),
+    "c"=>cosine(),
+    "t"=>tangent(),
+    _=>panic!("Error!"),
+    }
 }
